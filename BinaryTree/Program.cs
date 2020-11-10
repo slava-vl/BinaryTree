@@ -276,28 +276,6 @@ namespace BinaryTree
             }
 
         }
-
-        /// <summary>
-        /// Количество листьев в дереве
-        /// </summary>
-        /// <returns></returns>
-        public int CountLeaves() 
-        {
-            return countLeaves(Head);
-        }
-        private int countLeaves(Node node)
-        {
-            if (node == null)
-            {
-                return 0;
-            }
-            else if (node.left == null && node.right == null)
-            {
-                return 1;
-            }
-            else
-                return countLeaves(node.left) + countLeaves(node.right);
-        }
     }
     class Program
     {
@@ -315,7 +293,7 @@ namespace BinaryTree
             bs.Push(35);
             bs.Push(50);
             Console.WriteLine();
-            Console.WriteLine(bs.CountLeaves());
+            Console.WriteLine(bs.Height());
 
 
         }
