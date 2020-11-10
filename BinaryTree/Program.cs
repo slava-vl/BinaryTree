@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace BinaryTree
 {
@@ -29,6 +24,10 @@ namespace BinaryTree
         Node Head;
         public int count = 0;
 
+        /// <summary>
+        /// Максимальное значение в дереве
+        /// </summary>
+        /// <returns></returns>
         public int GetMin() 
         {
             Node temp = new Node();
@@ -39,6 +38,11 @@ namespace BinaryTree
             }
             return temp.Value;
         }
+
+        /// <summary>
+        /// Минимальное значение в дереве
+        /// </summary>
+        /// <returns></returns>
         public int GetMax()
         {
             Node temp = new Node();
@@ -50,6 +54,11 @@ namespace BinaryTree
             return temp.Value;
         }
 
+        /// <summary>
+        /// Удалить элемент дерева по значению
+        /// </summary>
+        /// <param name="n">Значение элемента, который нужно удалить</param>
+        /// <returns></returns>
         public bool RemoveNode(int n) 
         {
             Node actual = Search(n);
@@ -92,6 +101,12 @@ namespace BinaryTree
 
             }
         }
+
+        /// <summary>
+        /// Найти элемент по значению
+        /// </summary>
+        /// <param name="n">Значение элемента</param>
+        /// <returns></returns>
         private Node Search(int n) 
         {
             Node temp = new Node();
@@ -106,6 +121,12 @@ namespace BinaryTree
             }
             return temp;
         }
+
+        /// <summary>
+        /// Добавить элемент в дерево
+        /// </summary>
+        /// <param name="n">Значение элемента</param>
+        /// <returns></returns>
         public bool Push(int n) 
         {
             Node newNode = new Node();
@@ -226,6 +247,10 @@ namespace BinaryTree
 
         }
 
+        /// <summary>
+        /// Определить, пустое ли дерево
+        /// </summary>
+        /// <returns></returns>
         public bool IsEmpty() 
         {
             return (Head == null) ? true : false;
@@ -257,14 +282,6 @@ namespace BinaryTree
         static void Main(string[] args)
         {
             BinarySearchTree bs = new BinarySearchTree();
-            Random rn = new Random();
-            /*for (int i = 0; i < 10; i++) 
-            {
-                int n = rn.Next(10, 99);
-                bs.Push(n);
-                Console.Write(n + " ");
-
-            }  */
             bs.Push(30);
             bs.Push(25);
             bs.Push(40);
