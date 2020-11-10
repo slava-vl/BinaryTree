@@ -150,6 +150,9 @@ namespace BinaryTree
             return true;
         }
 
+        /// <summary>
+        /// Пямой обход дерева
+        /// </summary>
         public void PRound() 
         {
             if (IsEmpty()) Console.WriteLine("Дерева нет");
@@ -158,7 +161,6 @@ namespace BinaryTree
                 pRoundRec(Head);
             }
         }
-        
         private void pRoundRec(Node node) 
         {
             
@@ -171,6 +173,10 @@ namespace BinaryTree
             }
 
         }
+        
+        /// <summary>
+        /// Симметричный обход дерева
+        /// </summary>
         public void SRound()
         {
             if (IsEmpty()) Console.WriteLine("Дерева нет");
@@ -193,6 +199,9 @@ namespace BinaryTree
 
         }
 
+        /// <summary>
+        /// Обратный обход дерева
+        /// </summary>
         public void ORound()
         {
             if (IsEmpty()) Console.WriteLine("Дерева нет");
@@ -221,6 +230,27 @@ namespace BinaryTree
         {
             return (Head == null) ? true : false;
         }
+
+        /// <summary>
+        /// Высота дерева
+        /// </summary>
+        /// <returns></returns>
+        public int Height() 
+        {
+            return height(Head);
+        }
+        private int height(Node node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1 + Math.Max(height(node.left), height(node.right));
+            }
+
+        }
     }
     class Program
     {
@@ -245,9 +275,8 @@ namespace BinaryTree
             bs.Push(32);
             bs.Push(35);
             bs.Push(50);
-            bs.PRound();
             Console.WriteLine();
-            Console.WriteLine(bs.GetMin());
+            Console.WriteLine(bs.Height());
 
 
         }
